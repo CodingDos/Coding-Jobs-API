@@ -13,7 +13,7 @@ async function importData(){
     let headers = {
         "host": host,
         "user-agent": userAgent,
-        "authorization-key": authKey
+        "authorization-key": apiKey
     }
 
     let res = await axios.get("https://data.usajobs.gov/api/search?Page=1&ResultsPerPage=600&JobCategoryCode=2200", { headers })
