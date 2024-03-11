@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 mongoose.set("returnOriginal", false)
 
-const MONGODB_URI = process.env.MONGODB_PROD || 'mongodb://localhost:27017/hogwarts'
+const MONGODB_URI = process.env.MONGODB_PROD || 'mongodb://localhost:27017/CodingJobs'
 
 mongoose.connect(MONGODB_URI)
 
