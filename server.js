@@ -7,7 +7,7 @@ import logger from "morgan"
 
 let app = express()
 
-let port = 3222
+let PORT = process.env.PORT || 3000 
 
 app.use(express.json())
 
@@ -21,7 +21,9 @@ connections.on("connected", () => {
     console.clear()
     console.log("Connected to MongoDB!")
 
-    app.listen(port, () => {
-        console.log("Express server running on port")
+    app.listen(PORT, () => {
+        process.env.NODE_ENV === "production"
+            ? console.log(`Express server running in production on port ${PORT}`)
+            : console.log(`Express server running in development on port ${PORT}`)
     })
 })
